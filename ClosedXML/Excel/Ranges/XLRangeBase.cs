@@ -337,7 +337,8 @@ namespace ClosedXML.Excel
 
         public IXLRange Merge()
         {
-            return Merge(true);
+            bool checkIntersect = !XLHelper.SkipCheckIntersectOnMerge;
+            return Merge(checkIntersect);
         }
 
         public IXLRange Merge(Boolean checkIntersect)

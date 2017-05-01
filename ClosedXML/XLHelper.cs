@@ -299,5 +299,20 @@ namespace ClosedXML.Excel
             // handle everything else
             return (DateTime)Convert.ChangeType(v, typeof(DateTime));
         }
+
+        [ThreadStatic]
+        private static bool skipCheckIntersectOnMerge = false;
+
+        public static bool SkipCheckIntersectOnMerge
+        {
+            get
+            {
+                return skipCheckIntersectOnMerge;
+            }
+            set
+            {
+                skipCheckIntersectOnMerge = value;
+            }
+        }
     }
 }
